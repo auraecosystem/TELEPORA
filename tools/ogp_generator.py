@@ -79,7 +79,8 @@ def generate(config: dict[str, Any]) -> str:
     for key in OPTIONAL:
         if key not in config or config[key] is None:
             continue
-        value = _text(config[key], key)
+        raw_value = config[key]
+        value = "" if key == "determiner" and raw_value == "" else _text(raw_value, key)
         if key in ("audio", "video"):
             value = _url(value, key)
         if key == "determiner" and value not in ("", "a", "an", "the", "auto"):
