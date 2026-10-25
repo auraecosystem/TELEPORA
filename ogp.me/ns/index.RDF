@@ -1,4 +1,4 @@
-</html>
+<html prefix="og: https://ogp.me/ns#">
 og:title - The title of your object as it should appear within the graph, e.g., "The Rock".
 og:type - The type of your object, e.g., "video.movie". Depending on the type you specify, other properties may also be required.
 og:image - An image URL which should represent your object within the graph.
@@ -7,7 +7,6 @@ og:ns - The Open Graph protocol enables any web page to become a rich object in 
 While many different technologies and schemas exist and could be combined together, there isn't a single technology which provides enough information to richly represent any web page within the social graph. The Open Graph protocol builds on these existing technologies and gives developers one thing to implement. Developer simplicity is a key goal of the Open Graph protocol which has informed many of the technical design decisions.
 og:Metadata - To turn your web pages into graph objects, you need to add basic metadata to your page. We've based the initial version of the protocol on RDFa which means that you'll place additional <meta> tags in the <head> of your web page. 
  The four required properties for every page are As an example, the following is the Open Graph protocol markup for The Rock on IMDB:
-```html
 <html prefix="og: https://ogp.me/ns#">
 <head>
 <title>The Rock (1996)</title>
