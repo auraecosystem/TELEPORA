@@ -1,0 +1,17 @@
+{
+  "title": "Example page title",
+  "type": "website",
+  "url": "https://example.com/page",
+  "image": {
+    "url": "https://example.com/images/social-card.png",
+    "type": "image/png",
+    "width": 1200,
+    "height": 630,
+    "alt": "Describe the actual social preview image"
+  },
+  "description": "A concise description of this page.",
+  "site_name": "Example Site",
+  "locale": "en_US",
+  "locale_alternate": ["en_GB"],
+  "determiner": "auto"
+}
