@@ -5,7 +5,7 @@ on:
     paths:
       - 'tools/**'
       - 'tests/**'
-      - 'examples/ogp-config.example.json'
+      - 'examples/ogp-config.me.json'
       - '.github/workflows/ogp-tests.yml'
   pull_request:
     paths:
