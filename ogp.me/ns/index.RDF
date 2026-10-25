@@ -89,19 +89,18 @@ Put structured properties after you declare their root tag. Whenever another roo
 <meta property="og:image" content="https://example.com/rock3.jpg" />
 <meta property="og:image:height" content="1000" />
 means there are 3 images on this page, the first image is 300x300, the middle one has unspecified dimensions, and the last one is 1000px tall.
-
 # Object Types
 In order for your object to be represented within the graph, you need to specify its type. This is done using the og:type property:
-
 <meta property="og:type" content="website" />
 When the community agrees on the schema for a type, it is added to the list of global types. All other objects in the type system are CURIEs of the form
 
-<head prefix="my_namespace: https://example.com/ns#">
+<head prefix="my_namespace: https://me.com/ns#">
 <meta property="og:type" content="my_namespace:my_type" />
+
 The global types are grouped into verticals. Each vertical has its own namespace. The og:type values for a namespace are always prefixed with the namespace and then a period. This is to reduce confusion with user-defined namespaced types which always have colons in them.
 
 # Music
-```Namespace URI: https://ogp.me/ns/music#
+Namespace URI: https://ogp.me/ns/music#
 og:type
 values: music.song
 music:duration - integer >=1 - The song's length in seconds.
@@ -122,9 +121,9 @@ music:song:track
 music:creator - profile - The creator of this playlist.
 music.radio_station
 music:creator - profile - The creator of this station.
-```
+
 # Video
-```Namespace URI: https://ogp.me/ns/video#
+Namespace URI: https://ogp.me/ns/video#
 og:type - values:
 video.movie
 video:actor - profile array - Actors in the movie.
@@ -148,25 +147,24 @@ video.tv_show
 video.other
 A video that doesn't belong in any other category. The metadata is identical to video.movie.
 No Vertical
-```
-These are globally defined objects that just don't fit into a vertical but yet are broadly used and agreed upon.
-og:type values:
 
-```article - Namespace URI: https://ogp.me/ns/article#
+These are globally defined objects that just don't fit into a vertical but yet are broadly used and agreed upon.
+
+og:type values:
+article - Namespace URI: https://ogp.me/ns/article#
 article:published_time - datetime - When the article was first published.
 article:modified_time - datetime - When the article was last changed.
 article:expiration_time - datetime - When the article is out of date after.
 article:author - profile array - Writers of the article.
 article:section - string - A high-level section name. E.g. Technology
 article:tag - string array - Tag words associated with this article.
-```
-```book - Namespace URI: https://ogp.me/ns/book#
+book - Namespace URI: https://ogp.me/ns/book#
 book:author - profile array - Who wrote this book.
 book:isbn - string - The ISBN
 book:release_date - datetime - The date the book was released.
 book:tag - string array - Tag words associated with this book.
-```
-```payment.link - Namespace URI: https://ogp.me/ns/payment# 🚧 Beta only
+
+payment.link - Namespace URI: https://ogp.me/ns/payment# 🚧 Beta only
 
 payment:description - string - Description about the payment link.
 payment:currency - string - The currency code ISO 4217 of the payment.
@@ -175,16 +173,15 @@ payment:expires_at - datetime - The date and time including minutes and seconds 
 payment:status - enum(PENDING, PAID, FAILED, EXPIRED) - Status of the payment.
 payment:id - string - The unique identifier associated with the payment link for a given payment gateway or service provider.
 payment:success_url - url - A valid URL that gets redirected when payment is success.
-```
-```profile - Namespace URI: http://ogp.me/ns/profile#
 
+profile - Namespace URI: http://ogp.me/ns/profile#
 profile:first_name - string - A name normally given to an individual by a parent or self-chosen.
 profile:last_name - string - A name inherited from a family or marriage and by which the individual is commonly known.
 profile:username - string - A short unique string to identify them.
 profile:gender - enum(male, female) - Their gender.
 website - Namespace URI: https://ogp.me/ns/website#index.rdf
 No additional properties other than the basic ones. Any non-marked up webpage should be treated as og:type website.
-```
+`
 Types:
 The following types are used when defining attributes in Open Graph protocol.
 
