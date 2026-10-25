@@ -47,10 +47,10 @@ def generate(config: dict[str, Any]) -> str:
     og_type = _text(config["type"], "type")
     canonical_url = _url(config["url"], "url")
     images = config["image"]
-    if isinstance(images, str):
-        images = [{"url": images}]
+    if isinstance(images, str) or isinstance(images, dict):
+        images = [images] if isinstance(images, str) else [images]
     if not isinstance(images, list) or not images:
-        raise ValueError("image must be a URL string or a non-empty list of image objects")
+        raise ValueError("image must be a URL string, image object, or non-empty list of images")
 
     lines = [
         _tag("og:title", title),
