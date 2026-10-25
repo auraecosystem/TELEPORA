@@ -1,0 +1,31 @@
+name: Open Graph generator tests
+
+on:
+  push:
+    paths:
+      - 'tools/**'
+      - 'tests/**'
+      - 'examples/ogp-config.me.json'
+      - '.github/workflows/ogp-tests.yml'
+  pull_request:
+    paths:
+      - 'tools/**'
+      - 'tests/**'
+      - 'examples/ogp-config.example.json'
+      - '.github/workflows/ogp-tests.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate example configuration and generated tags
+        run: python tools/ogp_generator.py examples/ogp-config.example.json
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
